@@ -1,0 +1,42 @@
+<%- include('../partials/header') -%>
+
+<div class="container">
+    <div id="contact-content">
+        <div class="section-heading">
+            <h1>Portal <br><em>Sentra</em></h1>
+            <p>Se parte de Sentra.
+            <br> Registrate e inscribete totalmente gratis. </p>
+            
+        </div>
+        <div class="section-content">
+            <form id="contact" action="login" method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                      <fieldset>
+                        <input name="login" type="text" class="form-control" placeholder="Nombre de usuario">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-4">
+                      <fieldset>
+                        <input name="password" type="password" class="form-control" placeholder="Clave de usuario">
+                      </fieldset>
+                    </div>
+                     <div class="col-md-4">
+
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="btn">Entrar</button>
+                      </fieldset>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="section-heading">
+                <p>¿No tienes cuenta?
+                <br> <a href="/singup">Registrate </a> </p>
+                
+            </div>
+    </div>
+
+</div>
+
+<%- include('../partials/footer') -%>

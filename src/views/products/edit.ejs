@@ -1,0 +1,28 @@
+<%- include('../partials/header') -%>
+
+<div>
+    <form action="<%= product.id %>" method="post">
+        <input type="hidden" value="<%= product.id %>">
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td><input type="text" name="name" value="<%= product.name %>"></td>
+            </tr>
+            <tr>
+                <td>Precio</td>
+                <td><input type="text" name="price" value="<%= product.price %>"></td>
+            </tr>
+            <tr>
+                <td>Categoria</td>
+                <td><input type="text" name="category" value="<%= product.idcat %>"></td>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td><input type="text" name="stock" value="<%= product.stock %>"></td>
+                <td><input type="submit" value="Guardar"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<%- include('../partials/footer') -%>

@@ -1,0 +1,27 @@
+<%- include('../partials/header') -%>
+
+<div>
+    <form action="add" method="post">
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Precio</td>
+                <td><input type="text" name="price"></td>
+            </tr>
+            <tr>
+                <td>Categoria</td>
+                <td><input type="text" name="category"></td>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td><input type="text" name="stock"></td>
+                <td><input type="submit" value="Guardar"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<%- include('../partials/footer') -%>
