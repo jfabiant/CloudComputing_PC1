@@ -1,2 +1,2 @@
-# Soluciones en la Nube: Practica 1
+# Practica 1 de Soluciones en la Nube
 - John Timoteo Torres
