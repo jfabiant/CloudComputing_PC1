@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 
 router.get('/signup', (req, res) => {
-    res.render('signup');
+    res.render('auth/signup');
 });
 router.post('/signup', (req, res) => {
     console.log(req.body);
