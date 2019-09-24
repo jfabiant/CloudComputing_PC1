@@ -4,7 +4,7 @@ const pool = require('../database/db');
 const { isLoggedIn } = require('../lib/auth');
 
 router.get('/', isLoggedIn, async (req, res) => {
-    const products = await pool.query('SELECT p.id, p.name, p.price, p.idcat, p.stock, u.login FROM products p JOIN users u');
+    const products = await pool.query('SELECT p.id, p.name, p.price, p.idcat, p.stock , u.login FROM products p JOIN users u ON (p.users_id = u.id)');
     console.log(products);
     res.render('products/index', { products });
 });
@@ -19,7 +19,7 @@ router.post('/add', isLoggedIn, async (req, res) => {
         price: price,
         idcat: category,
         stock: stock,
-        users_id: 2
+        users_id: req.user.id
     }
     await pool.query('INSERT INTO products SET ?', [new_product]);
     res.redirect('/products');
