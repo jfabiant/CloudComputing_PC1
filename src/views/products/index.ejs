@@ -29,8 +29,8 @@
 
                             <h2><a href="#"> <%= e.name %> </a></h2>
                             <div class="post-meta align-items-center text-left clearfix">
-                                <figure class="author-figure mb-0 mr-3 float-left"><img src="/images/person_1.jpg" alt="Image"
-                                        class="img-fluid"></figure>
+                                <figure class="author-figure mb-0 mr-3 float-left"><img src="/images/person_1.jpg"
+                                        alt="Image" class="img-fluid"></figure>
                                 <span class="d-inline-block mt-1">Por <a href="#"> <%= e.login %> </a></span>
                                 <span>&nbsp;-&nbsp; Julio 19, 2019</span>
                             </div>
@@ -41,8 +41,14 @@
                                     <li><strong>Precio: </strong> S/. <%= e.price %> </li>
                                 </ul>
                             </p>
-                            <p><a href="products/edit/<%= e.id %>"><button class="btn btn-success">Editar</button></a></p>
-                            <p><a href="products/delete/<%= e.id %>"> <button class="btn btn-danger">Eliminar</button> </a></p>
+
+                            <% if(e.login == user.login) { %>
+                                <p><a href="products/edit/<%= e.id %>"><button
+                                class="btn btn-success">Editar</button></a></p>
+                            <p><a href="products/delete/<%= e.id %>"> <button class="btn btn-danger">Eliminar</button>
+                                </a></p>
+                            <% } %>
+
                         </div>
                     </div>
                 </div>

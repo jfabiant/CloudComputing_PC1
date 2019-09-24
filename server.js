@@ -4,11 +4,13 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
+const passport = require('passport');
 
 /**
  * INITIALIZE
  */
 const app = express();
+require('./src/lib/passport');
 
 /** 
  * SETTINGS
@@ -32,12 +34,15 @@ app.use(express.json());
 app.use(flash());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(passport.session());
 
 /**
  * GLOBAL VARIABLES
  */
 app.use((req, res, next) => {
     app.locals.message = req.flash('message');
+    app.locals.success = req.flash('success');
     app.locals.user = req.user;
     next();
 });

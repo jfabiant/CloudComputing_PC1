@@ -13,6 +13,8 @@
         <div class="container-fluid">
             <div class="row align-items-center">
 
+                <% if (user) { %>
+
                 <div class="col-12 search-form-wrap js-search-form">
                     <form method="POST" action="products/search">
                         <input type="text" id="s" name="search" class="form-control" placeholder="Search...">
@@ -27,8 +29,8 @@
                 <div class="col-8 text-right">
                     <nav class="site-navigation" role="navigation">
                         <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
-                            <li><a href="/login">Entrar</a></li>
-                            <li><a href="/signup">Registrarme</a></li>
+                            <li><a href="/products">Productos</a></li>
+                            <li><a href="/logout">Salir</a></li>
                             <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span
                                         class="icon-search"></span></a></li>
                         </ul>
@@ -36,6 +38,27 @@
                     <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span
                             class="icon-menu h3"></span></a>
                 </div>
+
+                <% } else { %>
+
+                <div class="col-4 site-logo">
+                    <a href="/" class="text-black h2 mb-0">Sentra</a>
+                </div>
+
+                <div class="col-8 text-right">
+                    <nav class="site-navigation" role="navigation">
+                        <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
+                            <li><a href="/login">Entrar</a></li>
+                            <li><a href="/signup">Registrarme</a></li>
+
+                        </ul>
+                    </nav>
+                    <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span
+                            class="icon-menu h3"></span></a>
+                </div>
+
+                <% } %>
+
             </div>
 
         </div>
