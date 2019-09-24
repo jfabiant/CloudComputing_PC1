@@ -18,6 +18,11 @@
     <div class="site-section bg-white">
         <div class="container">
             <div class="row">
+                <div class="col-md-12 mb-4">
+                    <center><a href="products/add"><button class="btn btn-success">Publicar un producto</button></a></center>
+                </div>
+            </div>
+            <div class="row">
 
                 <% products.forEach((e) => {  %>
 
@@ -43,8 +48,8 @@
                             </p>
 
                             <% if(e.login == user.login) { %>
-                                <p><a href="products/edit/<%= e.id %>"><button
-                                class="btn btn-success">Editar</button></a></p>
+                            <p><a href="products/edit/<%= e.id %>"><button class="btn btn-success">Editar</button></a>
+                            </p>
                             <p><a href="products/delete/<%= e.id %>"> <button class="btn btn-danger">Eliminar</button>
                                 </a></p>
                             <% } %>
